@@ -1,0 +1,4 @@
+2024-12-23 12:12:16.345 -07:00 [INF] Anonymize version: 2.1.2.2574
+2024-12-23 12:12:16.706 -07:00 [INF] Database: SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2024-12-23 12:12:16.707 -07:00 [INF] Classifying database BB_Subset...
+2024-12-23 12:12:17.087 -07:00 [INF] Classification complete - 25 tables and 353 columns classified in "00:00:00.3844845"

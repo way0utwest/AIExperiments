@@ -1,0 +1,29 @@
+2024-02-07 16:32:43.404 -07:00 [FTL] An unexpected error occurred
+System.ArgumentException: Keyword not supported: 'integratedsecurity'.
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder..ctor(String connectionString)
+   at RedGate.Classification.Database.SqlServer.SqlServerDatabase..ctor(String connectionString)
+   at RedGate.Anonymization.Databases.ADatabase.ForClassification(DatabaseType databaseType, String connectionString)
+   at RedGate.Anonymization.CommandLine.Classification.ClassifyRunner.Run(DatabaseType databaseType, String connectionString, String classificationFilePath, String optionsFilePath, Boolean outputAllColumns, Boolean outputJsonSchema)
+   at RedGate.Anonymization.CommandLine.Classification.ClassifyCommand.Run(ClassifyArgs args)
+   at RedGate.Anonymization.CommandLine.Classification.ClassifyCommand.Run(ClassifyArgs args)
+   at System.CommandLine.Invocation.AnonymousCommandHandler.InvokeAsync(InvocationContext context)
+   at System.CommandLine.Invocation.InvocationPipeline.<>c__DisplayClass4_0.<<BuildInvocationChain>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass17_0.<<UseParseErrorReporting>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass12_0.<<UseHelp>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass22_0.<<UseVersionOption>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass19_0.<<UseTypoCorrections>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c.<<UseSuggestDirective>b__18_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass16_0.<<UseParseDirective>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c.<<RegisterWithDotnetSuggest>b__5_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at System.CommandLine.Builder.CommandLineBuilderExtensions.<>c__DisplayClass8_0.<<UseExceptionHandler>b__0>d.MoveNext()

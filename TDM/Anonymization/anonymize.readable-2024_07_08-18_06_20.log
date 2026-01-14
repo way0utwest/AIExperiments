@@ -1,0 +1,10 @@
+2024-07-08 12:06:20.390 -06:00 [INF] Anonymize version: 1.2.3.1862
+2024-07-08 12:06:20.725 -06:00 [INF] Database: "SqlServer", Microsoft SQL Server 2019 (RTM-CU25-GDR) (KB5036335) - 15.0.4360.2 (X64) 
+	Mar 19 2024 00:23:01 
+	Copyright (C) 2019 Microsoft Corporation
+	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor)
+
+2024-07-08 12:06:20.742 -06:00 [INF] Masking database Northwind_Subset...
+2024-07-08 12:06:20.743 -06:00 [INF] Validating input...
+2024-07-08 12:06:20.942 -06:00 [INF] Masking database...
+2024-07-08 12:06:21.118 -06:00 [INF] Masking complete - 54 rows masked in "00:00:00.5171925"

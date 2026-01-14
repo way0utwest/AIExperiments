@@ -1,0 +1,8 @@
+2024-12-20 12:29:22.960 -07:00 [ERR] Unable to start a trial: A task was canceled.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at RedGate.Sdk.Licensing.Concurrency.DisposableSemaphoreWrapper.AcquireAsync(CancellationToken cancellationToken)
+   at RedGate.Sdk.Licensing.Auth.AuthManagerBase.LockAsync(CancellationToken cancellationToken)
+   at RedGate.Sdk.Licensing.Auth.AuthManager.GetAccessTokenInternalAsync(Boolean refreshIfExpired, CancellationToken cancellationToken)
+   at RedGate.Sdk.Licensing.LicensingApi.StartTrialAsync(ProductCodeWithEdition productCode, CancellationToken cancellationToken)
+   at RedGate.Subsetting.Subsetter.Licensing.LicenseApiWrapper.StartTrial(CancellationToken cancellationToken)
+   at RedGate.Subsetting.CommandLine.Auth.AuthRunner.StartTrial(Boolean startTrial, CancellationToken cancellationToken)

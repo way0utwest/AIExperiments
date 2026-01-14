@@ -1,0 +1,9 @@
+2024-02-07 16:38:45.969 -07:00 [INF] Anonymize version: 1.0.3.1787
+2024-02-07 16:38:46.136 -07:00 [INF] Database: "SqlServer", Microsoft SQL Server 2019 (RTM-CU22-GDR) (KB5029378) - 15.0.4326.1 (X64) 
+	Aug 18 2023 14:05:15 
+	Copyright (C) 2019 Microsoft Corporation
+	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor)
+
+2024-02-07 16:38:46.155 -07:00 [INF] Masking database subsetter_5_prod...
+2024-02-07 16:38:46.156 -07:00 [INF] Validating input...
+2024-02-07 16:38:46.161 -07:00 [INF] Validation failed with 1 errors

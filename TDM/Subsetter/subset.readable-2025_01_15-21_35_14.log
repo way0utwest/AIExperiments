@@ -1,0 +1,23 @@
+2025-01-15 14:35:14.430 -07:00 [INF] Subsetter version: 2.1.2.7370
+2025-01-15 14:35:14.756 -07:00 [INF] Subsetter started
+2025-01-15 14:35:14.985 -07:00 [INF] Building models for StartingTable
+2025-01-15 14:35:15.018 -07:00 [INF] Database: Source, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2025-01-15 14:35:15.021 -07:00 [INF] Database: Target, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2025-01-15 14:35:15.172 -07:00 [INF] Staging data for copying to target database
+2025-01-15 14:35:15.199 -07:00 [INF] Data staged in 0:00:00.0272243
+2025-01-15 14:35:15.200 -07:00 [INF] Copying subset to target database
+2025-01-15 14:35:15.202 -07:00 [INF] Copying data for dbo.awardsmanagers
+2025-01-15 14:35:15.247 -07:00 [INF] Copied 156 of 156 rows for dbo.awardsmanagers in 0:00:00.0470425
+2025-01-15 14:35:15.250 -07:00 [INF] Copying data for dbo.managershalf
+2025-01-15 14:35:15.256 -07:00 [INF] Copied 93 of 93 rows for dbo.managershalf in 0:00:00.0063651
+2025-01-15 14:35:15.257 -07:00 [INF] Copying data for dbo.seriespost
+2025-01-15 14:35:15.266 -07:00 [INF] Copied 272 of 272 rows for dbo.seriespost in 0:00:00.0096655
+2025-01-15 14:35:15.267 -07:00 [INF] Copying data for dbo.teamsfranchises
+2025-01-15 14:35:15.273 -07:00 [INF] Copied 120 of 120 rows for dbo.teamsfranchises in 0:00:00.0059635
+2025-01-15 14:35:15.274 -07:00 [INF] Copying data for dbo.teamshalf
+2025-01-15 14:35:15.287 -07:00 [INF] Copied 52 of 52 rows for dbo.teamshalf in 0:00:00.0136432
+2025-01-15 14:35:15.289 -07:00 [INF] Copying data for dbo.players
+2025-01-15 14:35:15.411 -07:00 [INF] Copied 1800 of 16564 rows for dbo.players in 0:00:00.1229225
+2025-01-15 14:35:15.421 -07:00 [INF] Subsetted data copied to target database in 0:00:00.221163
+2025-01-15 14:35:15.423 -07:00 [INF] Cleaning up
+2025-01-15 14:35:15.441 -07:00 [INF] Subsetting complete in 0:00:00.685019

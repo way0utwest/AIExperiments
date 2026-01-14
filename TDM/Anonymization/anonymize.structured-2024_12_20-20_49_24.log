@@ -1,0 +1,6 @@
+{"@t":"2024-12-20T20:49:25.1280339Z","@mt":"Anonymize version: {Version}","Version":"2.1.2.2574","task":"mask"}
+{"@t":"2024-12-20T20:49:25.4505732Z","@mt":"Database: {Type}, {Version}","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) ","task":"mask"}
+{"@t":"2024-12-20T20:49:25.4571728Z","@mt":"Masking database {DatabaseName}...","DatabaseName":"BB_Subset","task":"mask"}
+{"@t":"2024-12-20T20:49:25.4583317Z","@mt":"Validating input...","task":"mask"}
+{"@t":"2024-12-20T20:49:25.6032584Z","@mt":"Masking database...","task":"mask"}
+{"@t":"2024-12-20T20:49:25.8128415Z","@mt":"Masking complete - {TotalRows} rows masked in {TotalTime}","TotalRows":181,"TotalTime":"00:00:00.3661799","task":"mask"}

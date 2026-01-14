@@ -1,0 +1,6 @@
+{"@t":"2024-12-20T19:43:04.3994083Z","@mt":"Anonymize version: {Version}","Version":"2.1.2.2574","task":"mask"}
+{"@t":"2024-12-20T19:43:04.7151741Z","@mt":"Database: {Type}, {Version}","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) ","task":"mask"}
+{"@t":"2024-12-20T19:43:04.7218089Z","@mt":"Masking database {DatabaseName}...","DatabaseName":"BasballData_Subset","task":"mask"}
+{"@t":"2024-12-20T19:43:04.7229355Z","@mt":"Validating input...","task":"mask"}
+{"@t":"2024-12-20T19:43:04.8777286Z","@mt":"Masking database...","task":"mask"}
+{"@t":"2024-12-20T19:43:09.1677248Z","@mt":"Masking complete - {TotalRows} rows masked in {TotalTime}","TotalRows":16263,"TotalTime":"00:00:04.4564560","task":"mask"}

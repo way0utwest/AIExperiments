@@ -1,0 +1,61 @@
+{"@t":"2025-02-10T21:18:04.4950784Z","@mt":"Subsetter version: {Version}","Version":"2.1.2.7370"}
+{"@t":"2025-02-10T21:18:04.8629494Z","@mt":"Subsetter started"}
+{"@t":"2025-02-10T21:18:05.0988022Z","@mt":"Building models for {SubsetSpecifierType}","SubsetSpecifierType":"DesiredSize"}
+{"@t":"2025-02-10T21:18:05.5613344Z","@mt":"Database: {Location}, {Type}, {Version}","Location":"Source","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) "}
+{"@t":"2025-02-10T21:18:05.5646536Z","@mt":"Database: {Location}, {Type}, {Version}","Location":"Target","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) "}
+{"@t":"2025-02-10T21:18:06.2189520Z","@mt":"Staging data for copying to target database"}
+{"@t":"2025-02-10T21:18:10.4102442Z","@mt":"Data staged in {Duration}","Duration":"0:00:04.1913059"}
+{"@t":"2025-02-10T21:18:10.4113796Z","@mt":"Copying subset to target database"}
+{"@t":"2025-02-10T21:18:10.4147463Z","@mt":"Copying data for {TableName}","TableName":"dbo.fielding"}
+{"@t":"2025-02-10T21:18:11.1995705Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":14545,"SourceRowCount":144409,"TableName":"dbo.fielding","Duration":"0:00:00.7880675"}
+{"@t":"2025-02-10T21:18:11.2077977Z","@mt":"Copying data for {TableName}","TableName":"dbo.teamshalf"}
+{"@t":"2025-02-10T21:18:11.2216886Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":52,"SourceRowCount":52,"TableName":"dbo.teamshalf","Duration":"0:00:00.0142639"}
+{"@t":"2025-02-10T21:18:11.2230917Z","@mt":"Copying data for {TableName}","TableName":"dbo.teamsfranchises"}
+{"@t":"2025-02-10T21:18:11.2288754Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":120,"SourceRowCount":120,"TableName":"dbo.teamsfranchises","Duration":"0:00:00.0062005"}
+{"@t":"2025-02-10T21:18:11.2300832Z","@mt":"Copying data for {TableName}","TableName":"dbo.managershalf"}
+{"@t":"2025-02-10T21:18:11.2357524Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":93,"SourceRowCount":93,"TableName":"dbo.managershalf","Duration":"0:00:00.0059516"}
+{"@t":"2025-02-10T21:18:11.2368519Z","@mt":"Copying data for {TableName}","TableName":"dbo.seriespost"}
+{"@t":"2025-02-10T21:18:11.2467253Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":272,"SourceRowCount":272,"TableName":"dbo.seriespost","Duration":"0:00:00.0101786"}
+{"@t":"2025-02-10T21:18:11.2480400Z","@mt":"Copying data for {TableName}","TableName":"dbo.els_teamnames"}
+{"@t":"2025-02-10T21:18:11.2537777Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":37,"SourceRowCount":314,"TableName":"dbo.els_teamnames","Duration":"0:00:00.0062028"}
+{"@t":"2025-02-10T21:18:11.2544629Z","@mt":"Copying data for {TableName}","TableName":"dbo.awardsmanagers"}
+{"@t":"2025-02-10T21:18:11.2611382Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":156,"SourceRowCount":156,"TableName":"dbo.awardsmanagers","Duration":"0:00:00.0069986"}
+{"@t":"2025-02-10T21:18:11.2623830Z","@mt":"Copying data for {TableName}","TableName":"dbo.awardssharemanagers"}
+{"@t":"2025-02-10T21:18:11.2681754Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":34,"SourceRowCount":372,"TableName":"dbo.awardssharemanagers","Duration":"0:00:00.0061223"}
+{"@t":"2025-02-10T21:18:11.2697687Z","@mt":"Copying data for {TableName}","TableName":"dbo.schools"}
+{"@t":"2025-02-10T21:18:11.2784890Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":96,"SourceRowCount":749,"TableName":"dbo.schools","Duration":"0:00:00.0094531"}
+{"@t":"2025-02-10T21:18:11.2819111Z","@mt":"Copying data for {TableName}","TableName":"dbo.managers"}
+{"@t":"2025-02-10T21:18:11.3037786Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":337,"SourceRowCount":3306,"TableName":"dbo.managers","Duration":"0:00:00.0221707"}
+{"@t":"2025-02-10T21:18:11.3049858Z","@mt":"Copying data for {TableName}","TableName":"dbo.halloffame"}
+{"@t":"2025-02-10T21:18:11.3297095Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":356,"SourceRowCount":3883,"TableName":"dbo.halloffame","Duration":"0:00:00.025062"}
+{"@t":"2025-02-10T21:18:11.3312856Z","@mt":"Copying data for {TableName}","TableName":"dbo.allstarfull"}
+{"@t":"2025-02-10T21:18:11.3610251Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":477,"SourceRowCount":4834,"TableName":"dbo.allstarfull","Duration":"0:00:00.0301313"}
+{"@t":"2025-02-10T21:18:11.3624053Z","@mt":"Copying data for {TableName}","TableName":"dbo.awardsshareplayers"}
+{"@t":"2025-02-10T21:18:11.3990882Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":624,"SourceRowCount":6531,"TableName":"dbo.awardsshareplayers","Duration":"0:00:00.0369689"}
+{"@t":"2025-02-10T21:18:11.4004633Z","@mt":"Copying data for {TableName}","TableName":"dbo.awardsplayers"}
+{"@t":"2025-02-10T21:18:11.4369844Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":602,"SourceRowCount":5919,"TableName":"dbo.awardsplayers","Duration":"0:00:00.0368201"}
+{"@t":"2025-02-10T21:18:11.4386221Z","@mt":"Copying data for {TableName}","TableName":"dbo.fieldingof"}
+{"@t":"2025-02-10T21:18:11.4947556Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":1136,"SourceRowCount":12028,"TableName":"dbo.fieldingof","Duration":"0:00:00.0565402"}
+{"@t":"2025-02-10T21:18:11.4972036Z","@mt":"Copying data for {TableName}","TableName":"dbo.teams"}
+{"@t":"2025-02-10T21:18:11.5235438Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":263,"SourceRowCount":2715,"TableName":"dbo.teams","Duration":"0:00:00.0274601"}
+{"@t":"2025-02-10T21:18:11.5283241Z","@mt":"Copying data for {TableName}","TableName":"dbo.pitchingpost"}
+{"@t":"2025-02-10T21:18:11.5628655Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":481,"SourceRowCount":4612,"TableName":"dbo.pitchingpost","Duration":"0:00:00.0349338"}
+{"@t":"2025-02-10T21:18:11.5642821Z","@mt":"Copying data for {TableName}","TableName":"dbo.salaries"}
+{"@t":"2025-02-10T21:18:11.6694066Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":2286,"SourceRowCount":23141,"TableName":"dbo.salaries","Duration":"0:00:00.1054069"}
+{"@t":"2025-02-10T21:18:11.6715970Z","@mt":"Copying data for {TableName}","TableName":"dbo.schoolsplayers"}
+{"@t":"2025-02-10T21:18:11.7083541Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":652,"SourceRowCount":6147,"TableName":"dbo.schoolsplayers","Duration":"0:00:00.037542"}
+{"@t":"2025-02-10T21:18:11.7125136Z","@mt":"Copying data for {TableName}","TableName":"dbo.fieldingpost"}
+{"@t":"2025-02-10T21:18:11.7727036Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":1114,"SourceRowCount":11183,"TableName":"dbo.fieldingpost","Duration":"0:00:00.0605412"}
+{"@t":"2025-02-10T21:18:11.7745499Z","@mt":"Copying data for {TableName}","TableName":"dbo.battingpost"}
+{"@t":"2025-02-10T21:18:11.8326618Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":1094,"SourceRowCount":10510,"TableName":"dbo.battingpost","Duration":"0:00:00.0584031"}
+{"@t":"2025-02-10T21:18:11.8348457Z","@mt":"Copying data for {TableName}","TableName":"dbo.players"}
+{"@t":"2025-02-10T21:18:11.9404429Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":1644,"SourceRowCount":16564,"TableName":"dbo.players","Duration":"0:00:00.1067029"}
+{"@t":"2025-02-10T21:18:11.9509708Z","@mt":"Copying data for {TableName}","TableName":"dbo.pitching"}
+{"@t":"2025-02-10T21:18:12.1791077Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":4169,"SourceRowCount":41857,"TableName":"dbo.pitching","Duration":"0:00:00.2285283"}
+{"@t":"2025-02-10T21:18:12.1819670Z","@mt":"Copying data for {TableName}","TableName":"dbo.appearances"}
+{"@t":"2025-02-10T21:18:12.6617901Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":9652,"SourceRowCount":96737,"TableName":"dbo.appearances","Duration":"0:00:00.4801931"}
+{"@t":"2025-02-10T21:18:12.6655652Z","@mt":"Copying data for {TableName}","TableName":"dbo.batting"}
+{"@t":"2025-02-10T21:18:13.1313431Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":9579,"SourceRowCount":96600,"TableName":"dbo.batting","Duration":"0:00:00.4666878"}
+{"@t":"2025-02-10T21:18:13.1506422Z","@mt":"Subsetted data copied to target database in {Duration}","Duration":"0:00:02.7391975"}
+{"@t":"2025-02-10T21:18:13.1509590Z","@mt":"Cleaning up"}
+{"@t":"2025-02-10T21:18:13.1837541Z","@mt":"Subsetting complete in {Duration}","Duration":"0:00:08.3203061"}

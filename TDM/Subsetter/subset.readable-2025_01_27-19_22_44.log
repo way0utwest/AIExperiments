@@ -1,0 +1,61 @@
+2025-01-27 12:22:44.389 -07:00 [INF] Subsetter version: 2.1.2.7370
+2025-01-27 12:22:44.688 -07:00 [INF] Subsetter started
+2025-01-27 12:22:44.931 -07:00 [INF] Building models for DesiredSize
+2025-01-27 12:22:45.354 -07:00 [INF] Database: Source, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2025-01-27 12:22:45.357 -07:00 [INF] Database: Target, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2025-01-27 12:22:45.550 -07:00 [INF] Staging data for copying to target database
+2025-01-27 12:22:46.252 -07:00 [INF] Data staged in 0:00:00.7020736
+2025-01-27 12:22:46.253 -07:00 [INF] Copying subset to target database
+2025-01-27 12:22:46.255 -07:00 [INF] Copying data for dbo.fielding
+2025-01-27 12:22:47.167 -07:00 [INF] Copied 27144 of 144409 rows for dbo.fielding in 0:00:00.9142588
+2025-01-27 12:22:47.180 -07:00 [INF] Copying data for dbo.teamshalf
+2025-01-27 12:22:47.193 -07:00 [INF] Copied 52 of 52 rows for dbo.teamshalf in 0:00:00.0141307
+2025-01-27 12:22:47.195 -07:00 [INF] Copying data for dbo.teamsfranchises
+2025-01-27 12:22:47.200 -07:00 [INF] Copied 120 of 120 rows for dbo.teamsfranchises in 0:00:00.0060102
+2025-01-27 12:22:47.201 -07:00 [INF] Copying data for dbo.managershalf
+2025-01-27 12:22:47.207 -07:00 [INF] Copied 93 of 93 rows for dbo.managershalf in 0:00:00.0057824
+2025-01-27 12:22:47.208 -07:00 [INF] Copying data for dbo.seriespost
+2025-01-27 12:22:47.217 -07:00 [INF] Copied 272 of 272 rows for dbo.seriespost in 0:00:00.0097248
+2025-01-27 12:22:47.218 -07:00 [INF] Copying data for dbo.els_teamnames
+2025-01-27 12:22:47.224 -07:00 [INF] Copied 63 of 314 rows for dbo.els_teamnames in 0:00:00.0063728
+2025-01-27 12:22:47.225 -07:00 [INF] Copying data for dbo.awardsmanagers
+2025-01-27 12:22:47.233 -07:00 [INF] Copied 156 of 156 rows for dbo.awardsmanagers in 0:00:00.008311
+2025-01-27 12:22:47.234 -07:00 [INF] Copying data for dbo.awardssharemanagers
+2025-01-27 12:22:47.241 -07:00 [INF] Copied 73 of 372 rows for dbo.awardssharemanagers in 0:00:00.0068941
+2025-01-27 12:22:47.242 -07:00 [INF] Copying data for dbo.schools
+2025-01-27 12:22:47.253 -07:00 [INF] Copied 160 of 749 rows for dbo.schools in 0:00:00.0112669
+2025-01-27 12:22:47.256 -07:00 [INF] Copying data for dbo.managers
+2025-01-27 12:22:47.281 -07:00 [INF] Copied 633 of 3306 rows for dbo.managers in 0:00:00.0252589
+2025-01-27 12:22:47.283 -07:00 [INF] Copying data for dbo.halloffame
+2025-01-27 12:22:47.311 -07:00 [INF] Copied 682 of 3883 rows for dbo.halloffame in 0:00:00.0284697
+2025-01-27 12:22:47.312 -07:00 [INF] Copying data for dbo.allstarfull
+2025-01-27 12:22:47.346 -07:00 [INF] Copied 913 of 4834 rows for dbo.allstarfull in 0:00:00.0345979
+2025-01-27 12:22:47.348 -07:00 [INF] Copying data for dbo.awardsshareplayers
+2025-01-27 12:22:47.390 -07:00 [INF] Copied 1206 of 6531 rows for dbo.awardsshareplayers in 0:00:00.0427677
+2025-01-27 12:22:47.392 -07:00 [INF] Copying data for dbo.awardsplayers
+2025-01-27 12:22:47.433 -07:00 [INF] Copied 1132 of 5919 rows for dbo.awardsplayers in 0:00:00.0409308
+2025-01-27 12:22:47.434 -07:00 [INF] Copying data for dbo.fieldingof
+2025-01-27 12:22:47.500 -07:00 [INF] Copied 2191 of 12028 rows for dbo.fieldingof in 0:00:00.0660825
+2025-01-27 12:22:47.503 -07:00 [INF] Copying data for dbo.teams
+2025-01-27 12:22:47.537 -07:00 [INF] Copied 505 of 2715 rows for dbo.teams in 0:00:00.0354751
+2025-01-27 12:22:47.544 -07:00 [INF] Copying data for dbo.pitchingpost
+2025-01-27 12:22:47.587 -07:00 [INF] Copied 917 of 4612 rows for dbo.pitchingpost in 0:00:00.0435522
+2025-01-27 12:22:47.589 -07:00 [INF] Copying data for dbo.salaries
+2025-01-27 12:22:47.709 -07:00 [INF] Copied 4411 of 23141 rows for dbo.salaries in 0:00:00.1204494
+2025-01-27 12:22:47.713 -07:00 [INF] Copying data for dbo.schoolsplayers
+2025-01-27 12:22:47.761 -07:00 [INF] Copied 1177 of 6147 rows for dbo.schoolsplayers in 0:00:00.0485355
+2025-01-27 12:22:47.766 -07:00 [INF] Copying data for dbo.fieldingpost
+2025-01-27 12:22:47.839 -07:00 [INF] Copied 2099 of 11183 rows for dbo.fieldingpost in 0:00:00.0739914
+2025-01-27 12:22:47.842 -07:00 [INF] Copying data for dbo.battingpost
+2025-01-27 12:22:47.910 -07:00 [INF] Copied 1948 of 10510 rows for dbo.battingpost in 0:00:00.0681599
+2025-01-27 12:22:47.913 -07:00 [INF] Copying data for dbo.players
+2025-01-27 12:22:48.053 -07:00 [INF] Copied 3151 of 16564 rows for dbo.players in 0:00:00.1412886
+2025-01-27 12:22:48.069 -07:00 [INF] Copying data for dbo.pitching
+2025-01-27 12:22:48.349 -07:00 [INF] Copied 7874 of 41857 rows for dbo.pitching in 0:00:00.2810389
+2025-01-27 12:22:48.353 -07:00 [INF] Copying data for dbo.appearances
+2025-01-27 12:22:48.943 -07:00 [INF] Copied 18224 of 96737 rows for dbo.appearances in 0:00:00.5896618
+2025-01-27 12:22:48.948 -07:00 [INF] Copying data for dbo.batting
+2025-01-27 12:22:49.491 -07:00 [INF] Copied 18049 of 96600 rows for dbo.batting in 0:00:00.5437165
+2025-01-27 12:22:49.527 -07:00 [INF] Subsetted data copied to target database in 0:00:03.2739512
+2025-01-27 12:22:49.527 -07:00 [INF] Cleaning up
+2025-01-27 12:22:49.560 -07:00 [INF] Subsetting complete in 0:00:04.8709172

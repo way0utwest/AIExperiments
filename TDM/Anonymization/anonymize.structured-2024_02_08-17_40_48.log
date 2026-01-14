@@ -1,0 +1,4 @@
+{"@t":"2024-02-08T17:40:48.9534898Z","@mt":"Anonymize version: {Version}","Version":"1.0.3.1787","task":"classify"}
+{"@t":"2024-02-08T17:40:49.1432783Z","@mt":"Database: {Type}, {Version}","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU22-GDR) (KB5029378) - 15.0.4326.1 (X64) \n\tAug 18 2023 14:05:15 \n\tCopyright (C) 2019 Microsoft Corporation\n\tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor)\n","task":"classify"}
+{"@t":"2024-02-08T17:40:49.1591501Z","@mt":"Classifying database {DatabaseName}...","DatabaseName":"subsetter_4_qa","task":"classify"}
+{"@t":"2024-02-08T17:40:49.4378323Z","@mt":"Classification complete - {Tables} tables and {Columns} columns classified in {TotalTime}","Tables":1,"Columns":3,"TotalTime":"00:00:00.4687476","task":"classify"}
