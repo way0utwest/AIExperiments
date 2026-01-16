@@ -1,0 +1,27 @@
+2026-01-14 15:23:57.521 -07:00 [INF] Subsetter version: 2.1.2.7370
+2026-01-14 15:23:57.857 -07:00 [INF] Subsetter started
+2026-01-14 15:23:57.908 -07:00 [INF] Building models for StartingTable
+2026-01-14 15:23:57.941 -07:00 [INF] Database: Source, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2026-01-14 15:23:57.944 -07:00 [INF] Database: Target, SqlServer, Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  	Oct 23 2024 15:50:49  	Copyright (C) 2019 Microsoft Corporation 	Developer Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) 
+2026-01-14 15:23:58.089 -07:00 [INF] Staging data for copying to target database
+2026-01-14 15:23:58.652 -07:00 [INF] Data staged in 0:00:00.5634052
+2026-01-14 15:23:58.654 -07:00 [INF] Copying subset to target database
+2026-01-14 15:23:58.656 -07:00 [INF] Copying data for dbo.awardsmanagers
+2026-01-14 15:23:58.687 -07:00 [INF] Copied 156 of 156 rows for dbo.awardsmanagers in 0:00:00.0328946
+2026-01-14 15:23:58.690 -07:00 [INF] Copying data for dbo.managershalf
+2026-01-14 15:23:58.696 -07:00 [INF] Copied 93 of 93 rows for dbo.managershalf in 0:00:00.0067212
+2026-01-14 15:23:58.697 -07:00 [INF] Copying data for dbo.seriespost
+2026-01-14 15:23:58.707 -07:00 [INF] Copied 272 of 272 rows for dbo.seriespost in 0:00:00.0104252
+2026-01-14 15:23:58.709 -07:00 [INF] Copying data for dbo.teamsfranchises
+2026-01-14 15:23:58.714 -07:00 [INF] Copied 120 of 120 rows for dbo.teamsfranchises in 0:00:00.0056369
+2026-01-14 15:23:58.715 -07:00 [INF] Copying data for dbo.teamshalf
+2026-01-14 15:23:58.730 -07:00 [INF] Copied 52 of 52 rows for dbo.teamshalf in 0:00:00.01471
+2026-01-14 15:23:58.732 -07:00 [INF] Copying data for dbo.players
+2026-01-14 15:23:58.909 -07:00 [INF] Copied 3600 of 16564 rows for dbo.players in 0:00:00.1784237
+2026-01-14 15:23:58.929 -07:00 [INF] Copying data for dbo.batting
+2026-01-14 15:23:59.860 -07:00 [INF] Copied 25720 of 96600 rows for dbo.batting in 0:00:00.9322008
+2026-01-14 15:23:59.908 -07:00 [INF] Copying data for dbo.teams
+2026-01-14 15:23:59.981 -07:00 [INF] Copied 2233 of 2715 rows for dbo.teams in 0:00:00.0732524
+2026-01-14 15:23:59.991 -07:00 [INF] Subsetted data copied to target database in 0:00:01.3371378
+2026-01-14 15:23:59.993 -07:00 [INF] Cleaning up
+2026-01-14 15:24:00.009 -07:00 [INF] Subsetting complete in 0:00:02.1510479

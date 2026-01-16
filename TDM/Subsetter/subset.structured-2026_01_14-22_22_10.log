@@ -1,0 +1,27 @@
+{"@t":"2026-01-14T22:22:10.9227761Z","@mt":"Subsetter version: {Version}","Version":"2.1.2.7370"}
+{"@t":"2026-01-14T22:22:11.2489413Z","@mt":"Subsetter started"}
+{"@t":"2026-01-14T22:22:11.2988734Z","@mt":"Building models for {SubsetSpecifierType}","SubsetSpecifierType":"StartingTable"}
+{"@t":"2026-01-14T22:22:11.3327967Z","@mt":"Database: {Location}, {Type}, {Version}","Location":"Source","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) "}
+{"@t":"2026-01-14T22:22:11.3355226Z","@mt":"Database: {Location}, {Type}, {Version}","Location":"Target","Type":"SqlServer","Version":"Microsoft SQL Server 2019 (RTM-CU29-GDR) (KB5046860) - 15.0.4410.1 (X64)  \tOct 23 2024 15:50:49  \tCopyright (C) 2019 Microsoft Corporation \tDeveloper Edition (64-bit) on Windows 10 Pro for Workstations 10.0 <X64> (Build 19045: ) (Hypervisor) "}
+{"@t":"2026-01-14T22:22:11.3853302Z","@mt":"Staging data for copying to target database"}
+{"@t":"2026-01-14T22:22:11.5145015Z","@mt":"Data staged in {Duration}","Duration":"0:00:00.1291858"}
+{"@t":"2026-01-14T22:22:11.5156086Z","@mt":"Copying subset to target database"}
+{"@t":"2026-01-14T22:22:11.5177034Z","@mt":"Copying data for {TableName}","TableName":"dbo.awardsmanagers"}
+{"@t":"2026-01-14T22:22:11.5466278Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":156,"SourceRowCount":156,"TableName":"dbo.awardsmanagers","Duration":"0:00:00.0309172"}
+{"@t":"2026-01-14T22:22:11.5494267Z","@mt":"Copying data for {TableName}","TableName":"dbo.managershalf"}
+{"@t":"2026-01-14T22:22:11.5558039Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":93,"SourceRowCount":93,"TableName":"dbo.managershalf","Duration":"0:00:00.0067929"}
+{"@t":"2026-01-14T22:22:11.5569689Z","@mt":"Copying data for {TableName}","TableName":"dbo.seriespost"}
+{"@t":"2026-01-14T22:22:11.5664242Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":272,"SourceRowCount":272,"TableName":"dbo.seriespost","Duration":"0:00:00.0097797"}
+{"@t":"2026-01-14T22:22:11.5675160Z","@mt":"Copying data for {TableName}","TableName":"dbo.teamsfranchises"}
+{"@t":"2026-01-14T22:22:11.5722608Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":120,"SourceRowCount":120,"TableName":"dbo.teamsfranchises","Duration":"0:00:00.00507"}
+{"@t":"2026-01-14T22:22:11.5733052Z","@mt":"Copying data for {TableName}","TableName":"dbo.teamshalf"}
+{"@t":"2026-01-14T22:22:11.5873136Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":52,"SourceRowCount":52,"TableName":"dbo.teamshalf","Duration":"0:00:00.0143199"}
+{"@t":"2026-01-14T22:22:11.5896564Z","@mt":"Copying data for {TableName}","TableName":"dbo.players"}
+{"@t":"2026-01-14T22:22:11.7327531Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":1800,"SourceRowCount":16564,"TableName":"dbo.players","Duration":"0:00:00.1445449"}
+{"@t":"2026-01-14T22:22:11.7457370Z","@mt":"Copying data for {TableName}","TableName":"dbo.batting"}
+{"@t":"2026-01-14T22:22:12.3805299Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":11784,"SourceRowCount":96600,"TableName":"dbo.batting","Duration":"0:00:00.6356708"}
+{"@t":"2026-01-14T22:22:12.4040568Z","@mt":"Copying data for {TableName}","TableName":"dbo.teams"}
+{"@t":"2026-01-14T22:22:12.4325918Z","@mt":"Copied {TargetRowCount} of {SourceRowCount} rows for {TableName} in {Duration}","TargetRowCount":360,"SourceRowCount":2715,"TableName":"dbo.teams","Duration":"0:00:00.0294265"}
+{"@t":"2026-01-14T22:22:12.4375562Z","@mt":"Subsetted data copied to target database in {Duration}","Duration":"0:00:00.9219015"}
+{"@t":"2026-01-14T22:22:12.4394184Z","@mt":"Cleaning up"}
+{"@t":"2026-01-14T22:22:12.4539057Z","@mt":"Subsetting complete in {Duration}","Duration":"0:00:01.2046452"}
