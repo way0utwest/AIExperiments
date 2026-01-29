@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Volleyball Stats Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .header-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .header-controls input {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .header-controls input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 101, 101, 0.4);
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .player-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .player-name {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .player-name:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .stats-display {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .stat-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .average {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-top: 8px;
+        }
+
+        .rating-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .rating-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+        }
+
+        .rating-btn:active {
+            transform: scale(0.95);
+        }
+
+        .rating-btn-0 {
+            background: #fc8181;
+        }
+
+        .rating-btn-0:hover {
+            background: #f56565;
+        }
+
+        .rating-btn-1 {
+            background: #f6ad55;
+        }
+
+        .rating-btn-1:hover {
+            background: #ed8936;
+        }
+
+        .rating-btn-2 {
+            background: #68d391;
+        }
+
+        .rating-btn-2:hover {
+            background: #48bb78;
+        }
+
+        .rating-btn-3 {
+            background: #4fd1c5;
+        }
+
+        .rating-btn-3:hover {
+            background: #38b2ac;
+        }
+
+        @media (max-width: 1024px) {
+            .players-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .players-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-controls {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #48bb78;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏐 Volleyball Stats Tracker</h1>
+            <div class="header-controls">
+                <input type="date" id="sessionDate" />
+                <input type="text" id="sessionGoal" placeholder="Session Goal" />
+                <input type="time" id="sessionTime" />
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="saveToFile()">💾 Save Stats</button>
+                <button class="btn btn-secondary" onclick="resetAllStats()">🔄 Reset Stats</button>
+            </div>
+        </div>
+
+        <div class="players-grid" id="playersGrid"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Initialize with current date and time
+        document.getElementById('sessionDate').valueAsDate = new Date();
+        const now = new Date();
+        document.getElementById('sessionTime').value = now.toTimeString().slice(0, 5);
+
+        // Player data structure
+        let players = [];
+
+        // Initialize 12 players (4 rows x 3 columns)
+        function initializePlayers() {
+            const savedPlayers = localStorage.getItem('volleyballPlayers');
+            if (savedPlayers) {
+                players = JSON.parse(savedPlayers);
+            } else {
+                players = Array.from({ length: 12 }, (_, i) => ({
+                    id: i,
+                    name: `Player ${i + 1}`,
+                    attempts: 0,
+                    totalScore: 0,
+                    ratings: []
+                }));
+            }
+            renderPlayers();
+        }
+
+        function savePlayersToStorage() {
+            localStorage.setItem('volleyballPlayers', JSON.stringify(players));
+        }
+
+        function renderPlayers() {
+            const grid = document.getElementById('playersGrid');
+            // Clear completely
+            grid.innerHTML = '';
+
+            players.forEach(player => {
+                const card = document.createElement('div');
+                card.className = 'player-card';
+                
+                const average = player.attempts > 0 ? (player.totalScore / player.attempts).toFixed(2) : '0.00';
+                
+                // Create input element programmatically to ensure value is set properly
+                const nameInput = document.createElement('input');
+                nameInput.type = 'text';
+                nameInput.className = 'player-name';
+                nameInput.value = player.name;
+                nameInput.onchange = function() { updatePlayerName(player.id, this.value); };
+                
+                const statsDiv = document.createElement('div');
+                statsDiv.className = 'stats-display';
+                statsDiv.innerHTML = `
+                    <div class="stat-row">
+                        <span class="stat-label">Attempts:</span>
+                        <span class="stat-value">${player.attempts}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Total Score:</span>
+                        <span class="stat-value">${player.totalScore}</span>
+                    </div>
+                    <div class="average">Avg: ${average}</div>
+                `;
+                
+                const buttonsDiv = document.createElement('div');
+                buttonsDiv.className = 'rating-buttons';
+                buttonsDiv.innerHTML = `
+                    <button class="rating-btn rating-btn-0" onclick="addRating(${player.id}, 0)">0</button>
+                    <button class="rating-btn rating-btn-1" onclick="addRating(${player.id}, 1)">1</button>
+                    <button class="rating-btn rating-btn-2" onclick="addRating(${player.id}, 2)">2</button>
+                    <button class="rating-btn rating-btn-3" onclick="addRating(${player.id}, 3)">3</button>
+                `;
+                
+                card.appendChild(nameInput);
+                card.appendChild(statsDiv);
+                card.appendChild(buttonsDiv);
+                grid.appendChild(card);
+            });
+        }
+
+        function updatePlayerName(playerId, newName) {
+            players[playerId].name = newName;
+            savePlayersToStorage();
+        }
+
+        function addRating(playerId, rating) {
+            const player = players[playerId];
+            player.ratings.push(rating);
+            player.attempts++;
+            player.totalScore += rating;
+            savePlayersToStorage();
+            renderPlayers();
+        }
+
+        function resetAllStats() {
+            if (confirm('Are you sure you want to reset all statistics? Player names will be preserved.')) {
+                players.forEach(player => {
+                    player.attempts = 0;
+                    player.totalScore = 0;
+                    player.ratings = [];
+                });
+                savePlayersToStorage();
+                renderPlayers();
+                showToast('All statistics reset!');
+            }
+        }
+
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear all statistics? Player names will be preserved.')) {
+                // Keep player names, only clear stats
+                players.forEach(player => {
+                    player.attempts = 0;
+                    player.totalScore = 0;
+                    player.ratings = [];
+                });
+                savePlayersToStorage();
+                renderPlayers();
+                showToast('All statistics cleared!');
+            }
+        }
+
+        function saveToFile() {
+            const date = document.getElementById('sessionDate').value;
+            const goal = document.getElementById('sessionGoal').value;
+            const time = document.getElementById('sessionTime').value;
+            const now = new Date();
+            const timestamp = now.toISOString().replace(/[:.]/g, '-');
+
+            let content = `Volleyball Stats Report\n`;
+            content += `=========================\n\n`;
+            content += `Date: ${date}\n`;
+            content += `Goal: ${goal}\n`;
+            content += `Time: ${time}\n`;
+            content += `Data Entry Completed: ${now.toLocaleString()}\n\n`;
+            content += `Player Statistics:\n`;
+            content += `------------------\n\n`;
+
+            players.forEach(player => {
+                const average = player.attempts > 0 ? (player.totalScore / player.attempts).toFixed(2) : '0.00';
+                content += `${player.name}\n`;
+                content += `  Attempts: ${player.attempts}\n`;
+                content += `  Total Score: ${player.totalScore}\n`;
+                content += `  Average Pass Score: ${average}\n`;
+                content += `  Ratings: ${player.ratings.join(', ')}\n\n`;
+            });
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `volleyball-stats-${timestamp}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('Stats saved successfully!');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize on page load
+        initializePlayers();
+    </script>
+</body>
+</html>
