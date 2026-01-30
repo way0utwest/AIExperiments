@@ -342,11 +342,6 @@
                 <input type="text" id="sessionGoal" placeholder="Session Goal" />
                 <input type="time" id="sessionTime" />
             </div>
-            <div class="action-buttons">
-                <button class="btn btn-primary" onclick="saveToFile()">💾 Save Stats</button>
-                <button class="btn btn-secondary" onclick="exportToCSV()">📊 Export CSV</button>
-                <button class="btn btn-danger" onclick="resetAllStats()">🔄 Reset Stats</button>
-            </div>
         </div>
 
         <div class="summary-section">
@@ -372,6 +367,12 @@
         </div>
 
         <div class="players-grid" id="playersGrid"></div>
+
+        <div class="action-buttons" style="margin-top: 20px;">
+            <button class="btn btn-primary" onclick="saveToFile()">💾 Save Stats</button>
+            <button class="btn btn-secondary" onclick="exportToCSV()">📊 Export CSV</button>
+            <button class="btn btn-danger" onclick="resetAllStats()">🔄 Reset Stats</button>
+        </div>
     </div>
 
     <div class="toast" id="toast"></div>
@@ -486,16 +487,14 @@
         }
 
         function resetAllStats() {
-            if (confirm('Are you sure you want to reset all statistics? Player names will be preserved.')) {
-                players.forEach(player => {
-                    player.attempts = 0;
-                    player.totalScore = 0;
-                    player.ratings = [];
-                });
-                savePlayersToStorage();
-                renderPlayers();
-                showToast('All statistics reset!');
-            }
+            players.forEach(player => {
+                player.attempts = 0;
+                player.totalScore = 0;
+                player.ratings = [];
+            });
+            savePlayersToStorage();
+            renderPlayers();
+            showToast('All statistics reset!');
         }
 
         function clearAllData() {
