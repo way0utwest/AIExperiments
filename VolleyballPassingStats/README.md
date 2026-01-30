@@ -1,7 +1,15 @@
 # Volleyball Stats Tracker - Development Summary
 
 ## Project Overview
-A web-based volleyball statistics tracking application optimized for iPad use. The app allows coaches or players to track passing performance for up to 12 players in a clean, touch-friendly interface.
+A web-based volleyball statistics tracking application optimized for iPad use. The app allows coaches or players to track passing performance for up to 12 players in a clean, touch-friendly interface. There are two versions of these files: `volleyball-stats_13Black.html` and `volleball-pass-tracker.html`, both providing similar functionality.
+
+### volleyball-stats_13Black.html
+This version is a 3x4 grid that allows tracking for 12 players. Each player has customizable names, and users can rate each pass with a score from 0 to 3. The app calculates and displays the average pass score in real-time. There is an undo button below the rating buttions for correcting mistakes. Users can export the data as a JSON file or reset all statistics while preserving player names.
+
+### volleball-pass-tracker.html
+This is a 25 pass tracker that has 1-25 down the left side with 4 buttons for rating serve receive passes. The top of each line can be customized if needed. This calculates a basic average of all passes rated.
+
+If you make a mistake rating a pass, just click the correct rating button to adjust the rating.
 
 ## What Was Built
 A single-page HTML web application that works in any modern browser, with special optimization for iPad tablets.
@@ -25,7 +33,8 @@ A single-page HTML web application that works in any modern browser, with specia
 - Time field (defaults to current time)
 
 ### Data Management
-- **Save Stats**: Exports all data to a downloadable text file with timestamp
+- **Export JSON**: Exports all data to a downloadable text file with timestamp as a JSON file. There is a summary at the top.
+- **Export CSV**: exports a CSV file of the current stats.
 - **Reset Stats**: Clears all statistics while preserving player names
 - Automatic data persistence using browser local storage
 - All data survives page refreshes and browser closures
@@ -52,7 +61,7 @@ A single-page HTML web application that works in any modern browser, with specia
 
 ## How to Use on iPad
 
-1. Open the `volleyball-stats.html` file in Safari
+1. Open the `volleyball-stats_13Black.html` or `volleball-pass-tracker.html` file in Microsoft Edge
 2. Tap the Share button (square with arrow)
 3. Select "Add to Home Screen"
 4. The app will appear as an icon on your home screen
