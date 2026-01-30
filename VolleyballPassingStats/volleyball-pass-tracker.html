@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Volleyball Pass Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 16px;
+            font-size: 28px;
+        }
+
+        .date-time-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .date-time-section input {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .date-time-section input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .average-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .average-label {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .average-value {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .average-details {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        .column-headers {
+            display: grid;
+            grid-template-columns: 60px 1fr 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+            align-items: center;
+        }
+
+        .column-headers-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .column-header-input {
+            padding: 8px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .column-header-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .passes-container {
+            margin-bottom: 24px;
+        }
+
+        .pass-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .pass-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: #667eea;
+            text-align: center;
+            padding: 12px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .pass-btn {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+            color: #4a5568;
+        }
+
+        .pass-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .pass-btn:active {
+            transform: scale(0.95);
+        }
+
+        .pass-btn.selected {
+            color: white;
+            border-color: transparent;
+        }
+
+        .pass-btn.selected-0 {
+            background: #fc8181;
+        }
+
+        .pass-btn.selected-1 {
+            background: #f6ad55;
+        }
+
+        .pass-btn.selected-2 {
+            background: #68d391;
+        }
+
+        .pass-btn.selected-3 {
+            background: #4fd1c5;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 101, 101, 0.4);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #48bb78;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 16px;
+            }
+
+            .pass-row, .column-headers {
+                gap: 4px;
+            }
+
+            .pass-btn {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            .pass-number {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏐 Volleyball Pass Tracker</h1>
+            <div class="date-time-section">
+                <input type="date" id="sessionDate" />
+                <input type="time" id="sessionTime" />
+            </div>
+        </div>
+
+        <div class="average-display">
+            <div class="average-label">Running Average</div>
+            <div class="average-value" id="averageValue">0.00</div>
+            <div class="average-details" id="averageDetails">0 passes recorded</div>
+        </div>
+
+        <div class="column-headers">
+            <div class="column-headers-label">#</div>
+            <input type="text" class="column-header-input" id="header-0" value="0" onchange="updateHeader(0, this.value)" />
+            <input type="text" class="column-header-input" id="header-1" value="1" onchange="updateHeader(1, this.value)" />
+            <input type="text" class="column-header-input" id="header-2" value="2" onchange="updateHeader(2, this.value)" />
+            <input type="text" class="column-header-input" id="header-3" value="3" onchange="updateHeader(3, this.value)" />
+        </div>
+
+        <div class="passes-container" id="passesContainer"></div>
+
+        <div class="action-buttons">
+            <button class="btn btn-secondary" onclick="exportToJSON()">📋 Export JSON</button>
+            <button class="btn btn-secondary" onclick="exportToCSV()">📊 Export CSV</button>
+            <button class="btn btn-danger" onclick="clearAllData()">🔄 Clear All</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Initialize with current date and time
+        document.getElementById('sessionDate').valueAsDate = new Date();
+        const now = new Date();
+        document.getElementById('sessionTime').value = now.toTimeString().slice(0, 5);
+
+        // Data structure
+        let passes = Array(25).fill(null);
+        let columnHeaders = ['0', '1', '2', '3'];
+
+        // Load saved data
+        function loadData() {
+            const savedPasses = localStorage.getItem('volleyballPasses');
+            const savedHeaders = localStorage.getItem('volleyballHeaders');
+
+            if (savedPasses) {
+                passes = JSON.parse(savedPasses);
+            }
+
+            if (savedHeaders) {
+                columnHeaders = JSON.parse(savedHeaders);
+                columnHeaders.forEach((header, index) => {
+                    document.getElementById(`header-${index}`).value = header;
+                });
+            }
+        }
+
+        // Save data
+        function saveData() {
+            localStorage.setItem('volleyballPasses', JSON.stringify(passes));
+            localStorage.setItem('volleyballHeaders', JSON.stringify(columnHeaders));
+        }
+
+        // Update column header
+        function updateHeader(index, value) {
+            columnHeaders[index] = value;
+            saveData();
+        }
+
+        // Select pass rating
+        function selectPass(passIndex, rating) {
+            passes[passIndex] = rating;
+            saveData();
+            renderPasses();
+            updateAverage();
+        }
+
+        // Update average display
+        function updateAverage() {
+            const recordedPasses = passes.filter(p => p !== null);
+            const count = recordedPasses.length;
+
+            if (count === 0) {
+                document.getElementById('averageValue').textContent = '0.00';
+                document.getElementById('averageDetails').textContent = '0 passes recorded';
+            } else {
+                const sum = recordedPasses.reduce((acc, val) => acc + val, 0);
+                const average = (sum / count).toFixed(2);
+
+                // Count by rating
+                const counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
+                recordedPasses.forEach(rating => counts[rating]++);
+
+                document.getElementById('averageValue').textContent = average;
+                document.getElementById('averageDetails').textContent =
+                    `${count} passes | 0:${counts[0]} | 1:${counts[1]} | 2:${counts[2]} | 3:${counts[3]}`;
+            }
+        }
+
+        // Render all pass rows
+        function renderPasses() {
+            const container = document.getElementById('passesContainer');
+            container.innerHTML = '';
+
+            for (let i = 0; i < 25; i++) {
+                const row = document.createElement('div');
+                row.className = 'pass-row';
+
+                const number = document.createElement('div');
+                number.className = 'pass-number';
+                number.textContent = i + 1;
+                row.appendChild(number);
+
+                for (let rating = 0; rating <= 3; rating++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'pass-btn';
+                    btn.textContent = columnHeaders[rating];
+                    btn.onclick = () => selectPass(i, rating);
+
+                    if (passes[i] === rating) {
+                        btn.classList.add('selected', `selected-${rating}`);
+                    }
+
+                    row.appendChild(btn);
+                }
+
+                container.appendChild(row);
+            }
+        }
+
+        // Export to JSON
+        function exportToJSON() {
+            const date = document.getElementById('sessionDate').value;
+            const time = document.getElementById('sessionTime').value;
+            const now = new Date();
+            const timestamp = now.toISOString().replace(/[:.]/g, '-');
+
+            // Calculate statistics
+            const recordedPasses = passes.filter(p => p !== null);
+            const totalAttempts = recordedPasses.length;
+            const totalScore = recordedPasses.reduce((acc, val) => acc + val, 0);
+            const totalAverage = totalAttempts > 0 ? (totalScore / totalAttempts).toFixed(2) : '0.00';
+
+            // Count by type
+            const totalsByType = { 0: 0, 1: 0, 2: 0, 3: 0 };
+            recordedPasses.forEach(rating => totalsByType[rating]++);
+
+            const jsonData = {
+                metadata: {
+                    date: date,
+                    time: time,
+                    exportDateTime: now.toISOString(),
+                    columnHeaders: [...columnHeaders],
+                    summary: {
+                        totalAttempts: totalAttempts,
+                        totalsByPassType: {
+                            pass0: totalsByType[0],
+                            pass1: totalsByType[1],
+                            pass2: totalsByType[2],
+                            pass3: totalsByType[3]
+                        },
+                        totalAverage: parseFloat(totalAverage)
+                    }
+                },
+                passes: passes.map((rating, index) => ({
+                    passNumber: index + 1,
+                    rating: rating,
+                    ratingLabel: rating !== null ? columnHeaders[rating] : null
+                }))
+            };
+
+            const jsonString = JSON.stringify(jsonData, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `volleyball-passes-${timestamp}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('JSON exported successfully!');
+        }
+
+        // Export to CSV
+        function exportToCSV() {
+            const date = document.getElementById('sessionDate').value;
+            const time = document.getElementById('sessionTime').value;
+            const now = new Date();
+            const timestamp = now.toISOString().replace(/[:.]/g, '-');
+            const datetime = `${date} ${time}`;
+
+            let csvContent = 'DateTime,PassNumber,Rating,RatingLabel\n';
+
+            passes.forEach((rating, index) => {
+                if (rating !== null) {
+                    const label = columnHeaders[rating];
+                    csvContent += `"${datetime}",${index + 1},${rating},"${label}"\n`;
+                }
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `volleyball-passes-${timestamp}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('CSV exported successfully!');
+        }
+
+        // Clear all data
+        function clearAllData() {
+            passes = Array(25).fill(null);
+            saveData();
+            renderPasses();
+            updateAverage();
+            showToast('All data cleared!');
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize on page load
+        loadData();
+        renderPasses();
+        updateAverage();
+    </script>
+</body>
+</html>

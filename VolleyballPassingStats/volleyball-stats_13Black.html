@@ -237,6 +237,33 @@
             background: #38b2ac;
         }
 
+        .undo-btn {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .undo-btn:hover {
+            background: #cbd5e0;
+        }
+
+        .undo-btn:active {
+            transform: scale(0.95);
+        }
+
+        .undo-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 640px) {
             .header-controls {
                 grid-template-columns: 1fr;
@@ -371,6 +398,7 @@
         <div class="action-buttons" style="margin-top: 20px;">
             <button class="btn btn-primary" onclick="saveToFile()">💾 Save Stats</button>
             <button class="btn btn-secondary" onclick="exportToCSV()">📊 Export CSV</button>
+            <button class="btn btn-secondary" onclick="exportToJSON()">📋 Export JSON</button>
             <button class="btn btn-danger" onclick="resetAllStats()">🔄 Reset Stats</button>
         </div>
     </div>
@@ -462,10 +490,17 @@
                     <button class="rating-btn rating-btn-2" onclick="addRating(${player.id}, 2)">2</button>
                     <button class="rating-btn rating-btn-3" onclick="addRating(${player.id}, 3)">3</button>
                 `;
-                
+
+                const undoBtn = document.createElement('button');
+                undoBtn.className = 'undo-btn';
+                undoBtn.textContent = '↶ Undo';
+                undoBtn.onclick = function() { undoRating(player.id); };
+                undoBtn.disabled = player.attempts === 0;
+
                 card.appendChild(nameInput);
                 card.appendChild(statsDiv);
                 card.appendChild(buttonsDiv);
+                card.appendChild(undoBtn);
                 grid.appendChild(card);
             });
 
@@ -574,6 +609,69 @@
             URL.revokeObjectURL(url);
 
             showToast('CSV exported successfully!');
+        }
+
+        function exportToJSON() {
+            const date = document.getElementById('sessionDate').value;
+            const goal = document.getElementById('sessionGoal').value;
+            const time = document.getElementById('sessionTime').value;
+            const now = new Date();
+            const timestamp = now.toISOString().replace(/[:.]/g, '-');
+
+            // Calculate totals by pass type
+            const totalsByType = { 0: 0, 1: 0, 2: 0, 3: 0 };
+            let totalAttempts = 0;
+            let totalScore = 0;
+
+            players.forEach(player => {
+                player.ratings.forEach(rating => {
+                    totalsByType[rating]++;
+                    totalScore += rating;
+                });
+                totalAttempts += player.attempts;
+            });
+
+            const totalAverage = totalAttempts > 0 ? (totalScore / totalAttempts).toFixed(2) : '0.00';
+
+            // Build JSON structure
+            const jsonData = {
+                metadata: {
+                    date: date,
+                    time: time,
+                    goal: goal,
+                    exportDateTime: now.toISOString(),
+                    summary: {
+                        totalAttempts: totalAttempts,
+                        totalsByPassType: {
+                            pass0: totalsByType[0],
+                            pass1: totalsByType[1],
+                            pass2: totalsByType[2],
+                            pass3: totalsByType[3]
+                        },
+                        totalAverage: parseFloat(totalAverage)
+                    }
+                },
+                players: players.map(player => ({
+                    name: player.name,
+                    attempts: player.attempts,
+                    totalScore: player.totalScore,
+                    average: player.attempts > 0 ? parseFloat((player.totalScore / player.attempts).toFixed(2)) : 0,
+                    ratings: player.ratings
+                }))
+            };
+
+            const jsonString = JSON.stringify(jsonData, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `volleyball-stats-${timestamp}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('JSON exported successfully!');
         }
 
         function showToast(message) {

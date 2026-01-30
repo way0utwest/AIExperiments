@@ -7,6 +7,7 @@ A Python script that automatically organizes photos into year/month folder struc
 - ✅ Reads EXIF metadata to get accurate photo dates
 - ✅ Falls back to filename parsing if EXIF data is unavailable
 - ✅ Organizes photos into `YYYY/MM/` folder structure
+- ✅ **Converts HEIC files to JPG** (optional)
 - ✅ Supports dry-run mode to preview changes
 - ✅ Can copy or move files
 - ✅ Handles duplicate filenames automatically
@@ -39,11 +40,19 @@ python photo_organizer.py /path/to/photos /path/to/organized
 python photo_organizer.py /path/to/photos /path/to/organized --copy
 ```
 
+**Convert HEIC to JPG during organization:**
+```bash
+python photo_organizer.py /path/to/photos /path/to/organized --convert-heic
+```
+
+This will convert iPhone HEIC photos to JPG format while organizing them, making them more universally compatible.
+
 ### Arguments
 
 - `source` - Source directory containing your photos
 - `destination` - Destination directory where organized photos will be placed
 - `--copy` - Copy files instead of moving them
+- `--convert-heic` - Convert HEIC files to JPG format during organization
 - `--dry-run` - Preview what would happen without making changes
 
 ## How It Works
@@ -86,14 +95,21 @@ organized_photos/
 
 1. **Always do a dry run first** to see what will happen
 2. **Use --copy mode** if you want to keep the originals untouched
-3. The script looks for dates in EXIF tags: DateTimeOriginal, DateTime, and DateTimeDigitized
-4. Files without dates (no EXIF and no date in filename) will be skipped and listed in the summary
+3. **Use --convert-heic** if you have iPhone photos (HEIC format) and want them as JPG files for better compatibility
+4. The script looks for dates in EXIF tags: DateTimeOriginal, DateTime, and DateTimeDigitized
+5. Files without dates (no EXIF and no date in filename) will be skipped and listed in the summary
+6. HEIC conversion preserves EXIF data and uses high quality (95%) JPEG compression
 
 ## Troubleshooting
 
 **Files are skipped:**
 - Check if the file has EXIF data (many screenshots and downloaded images don't)
 - Check if the filename contains a date in formats like YYYYMMDD or YYYY-MM-DD
+
+**HEIC files not working:**
+- Make sure pillow-heif is installed: `pip install pillow-heif`
+- Use the `--convert-heic` flag to convert them to JPG during organization
+- HEIC files from iPhones typically have excellent EXIF data
 
 **EXIF reading errors:**
 - Some RAW formats may not be fully supported by Pillow
