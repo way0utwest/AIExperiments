@@ -521,6 +521,17 @@
             renderPlayers();
         }
 
+        function undoRating(playerId) {
+            const player = players[playerId];
+            if (player.ratings.length > 0) {
+                const lastRating = player.ratings.pop();
+                player.attempts--;
+                player.totalScore -= lastRating;
+                savePlayersToStorage();
+                renderPlayers();
+            }
+        }
+
         function resetAllStats() {
             players.forEach(player => {
                 player.attempts = 0;
